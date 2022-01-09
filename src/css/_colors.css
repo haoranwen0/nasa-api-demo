@@ -1,0 +1,9 @@
+/* Space themed color palette from https://colorhunt.co/palette/9a068079018c4c0070160040 */
+
+:root {
+  --primary-bg-color: #160040;
+  --secondary-bg-color: #4c0070;
+  --primary-accent-color: #9a0680;
+  --secondary-accent-color: #79018c;
+  --primary-text-color: #ffffff;
+}
