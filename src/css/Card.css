@@ -1,0 +1,57 @@
+@import url("./_colors.css");
+
+.card {
+  height: auto;
+  width: 600px;
+  margin-bottom: 48px;
+  background-color: var(--primary-bg-color);
+  color: var(--primary-text-color);
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%),
+    0 1px 5px 0 rgb(0 0 0 / 12%);
+}
+
+.card-description,
+.card-date,
+.card-selection,
+.card-img {
+  margin-top: 24px;
+}
+
+.card-selection {
+  display: flex;
+}
+
+.card-title h1 {
+  font-size: 20px;
+}
+
+.card-img {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.card-img img {
+  width: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.card-img-like,
+.card-img-bookmark {
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  margin-right: 12px;
+}
+
+.card-date span {
+  font-weight: 600;
+  float: right;
+}
+
+.card-description p {
+  line-height: 22px;
+}
