@@ -46,7 +46,7 @@ function SearchPage(props) {
     // console.log(data);
     if (state === "first time") {
       updateHitCountMax(data.collection.items.length);
-      if (data.collection.items.length > 0) {
+      if (data.collection.metadata.total_hits > 0) {
         updateHitCountMin(1);
       }
     } else if (state === "next") {
