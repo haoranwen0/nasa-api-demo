@@ -57,7 +57,7 @@ function Header(props) {
           </Tooltip> */}
           <div className="credit-container">
             <span className="credit-message">
-              Powered by NASA Image and Library API
+              Powered by NASA Image and Video Library API
             </span>
             <span>Design inspired by Instagram</span>
           </div>
