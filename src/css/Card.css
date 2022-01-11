@@ -3,6 +3,7 @@
 .card {
   height: auto;
   max-width: 600px;
+  width: 600px;
   margin-bottom: 48px;
   background-image: linear-gradient(
     to right,

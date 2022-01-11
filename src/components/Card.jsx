@@ -29,7 +29,7 @@ function Card(props) {
       mediaType: props.mediaType,
     };
     // console.log(cardObj);
-    const link = `https://dev.d5qur4zg5iofv.amplifyapp.com//shareable/${btoa(
+    const link = `https://dev.d5qur4zg5iofv.amplifyapp.com/shareable/${btoa(
       unescape(encodeURIComponent(JSON.stringify(cardObj)))
     )}`;
     // console.log(link);

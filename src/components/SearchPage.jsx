@@ -11,7 +11,7 @@ function SearchPage(props) {
   });
   const [loading, updateLoading] = useState(false);
   const [hitCountMax, updateHitCountMax] = useState(0);
-  const [hitCountMin, updateHitCountMin] = useState(1);
+  const [hitCountMin, updateHitCountMin] = useState(0);
   const [finalDiff, updateFinalDiff] = useState(0);
 
   useEffect(() => {
@@ -46,7 +46,9 @@ function SearchPage(props) {
     // console.log(data);
     if (state === "first time") {
       updateHitCountMax(data.collection.items.length);
-      updateHitCountMin(1);
+      if (data.collection.items.length > 0) {
+        updateHitCountMin(1);
+      }
     } else if (state === "next") {
       const diff = data.collection.metadata.total_hits - hitCountMax;
       updateHitCountMin((prev) => prev + 100);
@@ -114,36 +116,41 @@ function SearchPage(props) {
                 share={true}
               />
             ))}
-            <div className="search-results-container">
-              <span>
-                Showing {hitCountMin} - {hitCountMax} of{" "}
-                {data.collection.metadata.total_hits} hits.
-              </span>
-              <div className="search-selections">
-                {data.collection.links && (
-                  <>
-                    {(data.collection.links.length > 1 ||
-                      data.collection.links[0].rel === "prev") && (
-                      <span
-                        onClick={handlePrev}
-                        className="hover-underline-animation"
-                      >
-                        Previous
-                      </span>
-                    )}
-                    {(data.collection.links.length > 1 ||
-                      data.collection.links[0].rel === "next") && (
-                      <span
-                        onClick={handleNext}
-                        className="hover-underline-animation"
-                      >
-                        Next
-                      </span>
-                    )}
-                  </>
-                )}
+            <div
+              style={{ paddingBottom: "1px", height: "0px", width: "100%" }}
+            />
+            {data.collection.metadata.total_hits > 100 && (
+              <div className="search-results-container">
+                <span>
+                  Showing {hitCountMin} - {hitCountMax} of{" "}
+                  {data.collection.metadata.total_hits} hits.
+                </span>
+                <div className="search-selections">
+                  {data.collection.links && (
+                    <>
+                      {(data.collection.links.length > 1 ||
+                        data.collection.links[0].rel === "prev") && (
+                        <span
+                          onClick={handlePrev}
+                          className="hover-underline-animation"
+                        >
+                          Previous
+                        </span>
+                      )}
+                      {(data.collection.links.length > 1 ||
+                        data.collection.links[0].rel === "next") && (
+                        <span
+                          onClick={handleNext}
+                          className="hover-underline-animation"
+                        >
+                          Next
+                        </span>
+                      )}
+                    </>
+                  )}
+                </div>
               </div>
-            </div>
+            )}
           </>
         )}
       </div>
