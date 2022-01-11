@@ -1,3 +1,4 @@
+@import url("./css/_colors.css");
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 
 * {
@@ -10,4 +11,28 @@
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  color: var(--primary-text-color);
+}
+
+.hover-underline-animation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--primary-text-color);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }

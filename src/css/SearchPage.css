@@ -1,7 +1,7 @@
 @import url("./_colors.css");
 
 .search-page {
-  height: auto;
+  height: calc(100vh - var(--header-height));
   display: flex;
   justify-content: center;
   padding: 48px 0 0 0;
@@ -14,4 +14,40 @@
   align-items: center;
   width: 750px;
   /* background-color: var(--secondary-bg-color); */
+}
+
+.search-results-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 600px;
+  width: 80%;
+  color: var(--primary-text-color);
+  padding-bottom: 24px;
+}
+
+.search-selections {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.search-selections span {
+  cursor: pointer;
+  margin-left: 12px;
+}
+
+@media only screen and (max-width: 768px) {
+  .search-page {
+    padding: 65px 0 0 0;
+  }
+  .search-page-wrapper {
+    width: 100%;
+    padding: 0 12px;
+  }
+  .search-results-container {
+    width: 100%;
+  }
+  .search-results-container span {
+    font-size: 14px;
+  }
 }

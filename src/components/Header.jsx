@@ -1,27 +1,31 @@
 import React, { useState } from "react";
 import Logo from "../images/icon - header.png";
-import BookmarkIcon from "@mui/icons-material/Bookmark";
+// import BookmarkIcon from "@mui/icons-material/Bookmark";
 import SearchIcon from "@mui/icons-material/Search";
-import Tooltip from "@mui/material/Tooltip";
-import { useDispatch } from "react-redux";
-import { setResults } from "../actions";
+// import Tooltip from "@mui/material/Tooltip";
 import { useNavigate } from "react-router-dom";
 
 import "../css/Header.css";
 
-function Header() {
-  const dispatch = useDispatch();
+function Header(props) {
   const navigate = useNavigate();
 
   const [search, updateSearch] = useState("");
 
-  async function fetchNasa() {
-    const response = await fetch(
-      `https://images-api.nasa.gov/search?q=${search}`
+  const handleKeypress = (e) => {
+    if (e.key === "Enter") {
+      fetchNasa();
+    }
+  };
+
+  function fetchNasa() {
+    localStorage.setItem(
+      "url",
+      `https://images-api.nasa.gov/search?q=${search}&media_type=image`
     );
-    const data = await response.json();
-    console.log(data.collection.items);
-    dispatch(setResults(data.collection.items));
+    props.refresh(
+      `https://images-api.nasa.gov/search?q=${search}&media_type=image`
+    );
     navigate(`/search/${search}`);
   }
 
@@ -40,6 +44,7 @@ function Header() {
               type="text"
               placeholder="search anything NASA"
               onChange={(e) => updateSearch(e.target.value)}
+              onKeyDown={handleKeypress}
             />
             <div className="search-icon">
               <SearchIcon style={{ color: "#160040" }} onClick={fetchNasa} />
@@ -47,16 +52,16 @@ function Header() {
           </div>
         </div>
         <div className="navigation-container">
-          <Tooltip title="All liked" placement="right-start">
+          {/* <Tooltip title="All liked" placement="right-start">
             <BookmarkIcon />
-          </Tooltip>
+          </Tooltip> */}
+          <div className="credit-container">
+            <span className="credit-message">
+              Powered by NASA Image and Library API
+            </span>
+            <span>Design inspired by Instagram</span>
+          </div>
         </div>
-      </div>
-      <div className="credit-container">
-        <span className="credit-message">
-          Powered by NASA Image and Library API
-        </span>
-        <span>Design inspired by Instagram</span>
       </div>
     </div>
   );
