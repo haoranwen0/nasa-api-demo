@@ -25,7 +25,7 @@ function CustomLink() {
             date={cardObj.date}
             mediaType={cardObj.mediaType}
             id={cardObj.id}
-            share={false}
+            share={true}
           />
         )}
         <div style={{ paddingBottom: "1px", height: "0px", width: "100%" }} />

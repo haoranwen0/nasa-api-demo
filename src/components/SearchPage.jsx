@@ -16,7 +16,6 @@ function SearchPage(props) {
 
   useEffect(() => {
     fetchData(url, "first time");
-    // console.log("fetched");
     //eslint-disable-next-line
   }, [props]);
 

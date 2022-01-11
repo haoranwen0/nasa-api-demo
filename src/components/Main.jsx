@@ -43,7 +43,7 @@ function Main() {
               date={new Date().toString()}
               mediaType={apod.media_type}
               id={"apod"}
-              share={false}
+              share={true}
             />
             <div
               style={{ paddingBottom: "1px", height: "0px", width: "100%" }}
