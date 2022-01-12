@@ -81,7 +81,7 @@ function Card(props) {
       </div>
       <div className="card-description">
         {/* {console.log(props.description, props.title)} */}
-        <p>{props.description ? parse(props.description) : "N/A"}</p>
+        <p>{props.description ? parse(props.description) : null}</p>
       </div>
       <div className="card-date">
         <span>{props.date}</span>
