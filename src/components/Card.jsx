@@ -80,7 +80,8 @@ function Card(props) {
         )}
       </div>
       <div className="card-description">
-        <p>{parse(props.description)}</p>
+        {/* {console.log(props.description, props.title)} */}
+        <p>{props.description ? parse(props.description) : "N/A"}</p>
       </div>
       <div className="card-date">
         <span>{props.date}</span>
