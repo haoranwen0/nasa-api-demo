@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Bars } from "react-loading-icons";
+import { Grid } from "react-loading-icons";
 import Card from "./Card";
 
 import "../css/Main.css";
@@ -33,7 +33,7 @@ function Main() {
     <div className="main">
       <div className="main-wrapper">
         {loading ? (
-          <Bars stroke="#160040" width="45" speed={1} />
+          <Grid fill="#9a0680" width="25" speed={1} />
         ) : (
           <>
             <Card

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Card from "./Card";
-import { Bars } from "react-loading-icons";
+import { Grid } from "react-loading-icons";
 
 import "../css/SearchPage.css";
 
@@ -71,7 +71,7 @@ function SearchPage(props) {
     <div className="search-page">
       <div className="search-page-wrapper">
         {loading ? (
-          <Bars stroke="#160040" width="35" speed={1} />
+          <Grid fill="#9a0680" width="25" speed={1} />
         ) : (
           <>
             <div className="search-results-container">
