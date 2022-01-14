@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import Logo from "../images/icon - header.png";
-// import BookmarkIcon from "@mui/icons-material/Bookmark";
 import SearchIcon from "@mui/icons-material/Search";
-// import Tooltip from "@mui/material/Tooltip";
 import { useNavigate } from "react-router-dom";
 
 import "../css/Header.css";
