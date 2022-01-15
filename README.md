@@ -3,7 +3,7 @@
 A fully responsive web application that allows users to search and query via the [NASA Image and Video Library API](https://api.nasa.gov/). Users are able to like and dislike the photos and get a sharable link for each post. Landing page of the application uses [NASA Astronomy Picture of the Day API](https://api.nasa.gov/).
 
 ## Link to application
-[Spacestagram](bit.ly/spacestagram)
+[Spacestagram](https://bit.ly/spacestagram)
 
 ## Functionalities
 * Persistent like and dislike on the landing page for the Astronomy Picture of the Day API
